@@ -1,0 +1,10 @@
+asgiref #for channels in Django 
+Django #web framework
+django-cors-headers #for CORS
+djangorestframework #for REST API
+djangorestframework-simplejwt #for JWT
+PyJWT #for JWT
+pytz #for timezone
+sqlparse #for SQL
+psycopg2-binary #for PostgreSQL
+python-dotenv #for environment variables
