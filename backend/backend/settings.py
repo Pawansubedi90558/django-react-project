@@ -15,7 +15,7 @@ from datetime import timedelta
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+load_dotenv() # Load environment variables from .env file
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,6 +31,12 @@ SECRET_KEY = 'django-insecure-7i@_$9a)ov=42$@*k)m^3n)cu*#sayb#__b5^plgxj@w+%d=hh
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES":(
+        "rest_framework_simplejwt.authetication.JWTAuthentication",
+    )
+    "DEFAULT"
 
 
 # Application definition
