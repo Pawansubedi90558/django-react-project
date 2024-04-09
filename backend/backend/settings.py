@@ -35,8 +35,16 @@ ALLOWED_HOSTS = []
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES":(
         "rest_framework_simplejwt.authetication.JWTAuthentication",
-    )
-    "DEFAULT"
+    ),
+    "DEFAULT_PERMISSION_CLASSES":[
+        "rest_framework.permissions.IsAuthenticated",
+    ],
+}
+
+SIMPLE_JWT={
+    "ACCESS_TOKEN_LIFETIME":timedelta(minutes=30),
+    "REFRESH_TOKEN_LIFETIME":timedelta(days=1),
+}
 
 
 # Application definition
@@ -48,6 +56,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'api',
+    'rest_framework',
+    'corsheaders' #so cors is no issue for us, when different origin is trying to hit this backend 
 ]
 
 MIDDLEWARE = [
@@ -58,6 +69,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleWare',
 ]
 
 ROOT_URLCONF = 'backend.urls'
