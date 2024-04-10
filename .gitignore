@@ -1,0 +1,20 @@
+# Django
+*.pyc
+__pycache__/
+*.sqlite3
+*.pyo
+*.pyd
+*.py~
+*.swp
+
+# React
+/node_modules/
+/build/
+/.env
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# Miscellaneous
+.DS_Store
