@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-7i@_$9a)ov=42$@*k)m^3n)cu*#sayb#__b5^plgxj@w+%d=hh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES":(
@@ -58,7 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api',
     'rest_framework',
-    'corsheaders' #so cors is no issue for us, when different origin is trying to hit this backend 
+    'corsheaders', #so cors is no issue for us, when different origin is trying to hit this backend 
 ]
 
 MIDDLEWARE = [
