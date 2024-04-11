@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
+from .models import Note
 
 #serializers are used to convert complex data types like querysets and model instances to native python data types that can then be easily rendered into JSON, XML or other content types.
 class UserSerializer(serializers.ModelSerializer):
@@ -18,4 +19,13 @@ class UserSerializer(serializers.ModelSerializer):
         user=User.objects.create_user(**validated_data)
         #returns the created user
         return user
+
+class NoteSerializer(serializers.ModelSerializer):
+    #class Meta is used to define the model that the serializer is going to use
+    class Meta:
+        model=Note
+        fields=["id","title","content","created_at","author"]
+        extra_kwargs={"author":{"read_only":True}}
+
+
     
